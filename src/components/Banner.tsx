@@ -8,7 +8,7 @@ import { useSession } from 'next-auth/react';
 
 
 export default function Banner() {
-    const covers = ['/img/cover.jpg', '/img/cover2.jpg', '/img/cover3.jpg']
+    const covers = ['/img/cover.jpg', '/img/cover2.jpg', '/img/cover3.jpg', '/img/cover4.jpg']
     const [index, setIndex] = useState(0);
     const router = useRouter();
     const { data: session } = useSession()
@@ -17,15 +17,15 @@ export default function Banner() {
 
     return (
         <div className={styles.banner} onClick={() => setIndex(index + 1)}>
-            <Image src={covers[index % 3]}
+            <Image src={covers[index % 4]}
                 alt='cover'
                 fill={true}
                 priority
                 objectFit='cover'
             />
             <div className={styles.bannerText}>
-                <h1 className='text-4xl font-medium'>Your Travel Partner</h1>
-                <h3 className='text-xl font-serif'>Expore Your World with Us</h3>
+                <h1 className='text-4xl font-medium'>Elevate Your Dining Experience with Easy Reservations</h1>
+                <h3 className='text-xl font-serif'>Secure your seat, savor the flavor journey ahead.</h3>
             </div>
             {
                 session ?
@@ -34,9 +34,9 @@ export default function Banner() {
                     </div>
                 : null
             }
-            <button className="bg-white text-cyan-600 border border-cyan-600 font-semibold py-2 px-2 m-2 rounded z-30 absolute bottom-0 right-0 hover:bg-cyan-600 hover:text-white hover:border-transparent"
-                onClick={(e) => { e.stopPropagation(); router.push('/car') }}>
-                Select Your Travel Partner NOW
+            <button className="bg-white text-blue-600 border border-cyan-600 font-semibold py-2 px-5 m-2 rounded z-30 absolute bottom-0 right-0 hover:bg-cyan-600 hover:text-white hover:border-transparent"
+                onClick={(e) => { e.stopPropagation(); router.push('/restaurant') }}>
+                Discover restaurant – Your Table Awaits!
             </button>
         </div>
     )
