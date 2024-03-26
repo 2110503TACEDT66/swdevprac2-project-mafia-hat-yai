@@ -1,10 +1,9 @@
 
-export default async function deleteReservation(id: string, token: string) {
+export default async function deleteReservation(id: string) {
 
-    const response = await fetch(`https://localhost:5000/api/v1/reservations/${id}`, {
+    const response = await fetch(`http://localhost:5000/api/v1/reservations/${id}`, {
         method: "DELETE",
         headers: {
-            "Authorization": `Bearer ${token}`,
             "Content-Type": "application/json" 
         }
     });

@@ -17,8 +17,8 @@ export default async function TopMenu() {
             <div className='flex flex-row items-center absolute right-10 h-full px-2 absolute right-0 text-black text-lg font-bold'>
             <TopMenuItem title='Restaurants' pageRef='/restaurant' />
             <TopMenuItem title='Reservation' pageRef='/reservation' />
+            <TopMenuItem title='My Reservation' pageRef='/myreservation' />
             <TopMenuItem title='About' pageRef='/about' />
-            <TopMenuItem title='Cart' pageRef='/cart' />
             <TopMenuItem title='Register' pageRef='/register' />
                 {
                     session ? (

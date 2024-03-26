@@ -1,18 +1,14 @@
 import { Dayjs } from "dayjs"
 
-export default async function updateReservation(id: string, token: string, apptDate: Dayjs ,restaurant:string) {
-    if(apptDate) {
-        apptDate = apptDate.add(7, 'hour');
-    }
-    const response = await fetch(`https://presentation-day-1-f.vercel.app/api/v1/reservations/${id}`, {
+export default async function updateReservation(id: string, reserveDate: string) {
+
+    const response = await fetch(`http://localhost:5000/api/v1/api/v1/reservations/${id}`, {
         method: "PUT",
         headers: {
-            "Authorization": `Bearer ${token}`,
             "Content-Type": "application/json" 
         },
         body: JSON.stringify({ 
-            restaurant:restaurant,
-            apptDate: apptDate
+            reserveDate: reserveDate
         })
     });
 

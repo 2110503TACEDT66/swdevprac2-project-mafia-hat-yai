@@ -36,9 +36,14 @@ export interface RestaurantJson {
 }
 
 export interface Reservation {
-    id: string,
-    restaurantid: string
-    seats: string
+    _id: string,
+    restaurant: string,
+    reserveDate: string,
+    user: string,
+}
+export interface ReservationJson {
+    count: number,
+    data: Reservation[]
 }
 
 export interface ReviewItem {
