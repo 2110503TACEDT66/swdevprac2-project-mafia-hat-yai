@@ -13,7 +13,7 @@ export default function SignUp() {
         try {
 
             // Call your API route to sign up the user
-            const res = await fetch('http://localhost:5000/api/v1/auth/register', {
+            const res = await fetch('https://presentation-day-1-mafia-hat-yai.vercel.app/api/v1/auth/register', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
