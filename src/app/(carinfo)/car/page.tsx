@@ -3,15 +3,19 @@ import CarCatalog from "@/components/CarCatalog";
 import { Suspense } from "react";
 import { LinearProgress } from "@mui/material";
 import CarPanel from "@/components/CarPanel";
-import { CarJson } from "../../../../interfaces";
+import { CarJson, RestaurantJson } from "../../../../interfaces";
 
 export default async function Car() {
-    const cars:CarJson = await getCars()
+    const cars: RestaurantJson = await getCars()
+    
+    // console.log(cars);
+    console.log("Fetched Cars");
+
     return (
         <main className="text-center p-5" >
             <h1 className='text-xl font-medium'>Select Your Travel Partner</h1>
             <Suspense fallback={<p>Loading...<LinearProgress/></p>}>
-            <CarCatalog carJson={cars}/>
+            <CarCatalog restaurantJson={cars}/>
             </Suspense>
             <hr className="my-10" />
             <h1 className="text-xl font-medium">TRY Client-Side Car Panel</h1>

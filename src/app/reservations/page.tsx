@@ -7,7 +7,7 @@ import dayjs, { Dayjs } from "dayjs";
 import { useDispatch } from "react-redux";
 import { AppDishpatch } from "@/redux/store";
 import { addReservation } from "@/redux/features/cartSlice";
-import { ReservationItemm } from "../../../interfaces";
+import { ReservationItem } from "../../../interfaces";
 
 export default function Reservations() {
     
@@ -18,7 +18,7 @@ export default function Reservations() {
 
     const makeReservation = () => {
         if (cid && model && pickupDate && returnDate) {
-            const item: ReservationItemm = {
+            const item: ReservationItem = {
                 carId: cid,
                 carModel: model,
                 numOfDays: returnDate.diff(pickupDate, 'day'),

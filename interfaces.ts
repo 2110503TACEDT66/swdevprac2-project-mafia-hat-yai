@@ -1,4 +1,4 @@
-export interface ReservationItemm {
+export interface ReservationItem {
     carId: string
     carModel: string
     numOfDays: number
@@ -17,4 +17,38 @@ export interface CarItem {
 export interface CarJson {
     count: number
     data: CarItem[]
+}
+
+export interface RestaurantItem {
+    id: string,
+    name: string,
+    location: string,
+    picture: string,
+    open: string,
+    close: string,
+    averageStar: number,
+    totalStars: number,
+}
+
+export interface RestaurantJson {
+    count: number,
+    data: RestaurantItem[]
+}
+
+export interface Reservation {
+    id: string,
+    restaurantid: string
+    seats: string
+}
+
+export interface ReviewItem {
+    id: string,
+    restaurantid: string,
+    star: number,
+    review: string
+}
+
+export interface ReviewJson {
+    count: number,
+    data: ReviewItem[]
 }

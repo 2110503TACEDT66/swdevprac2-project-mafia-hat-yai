@@ -30,7 +30,7 @@ export default function Banner() {
             {
                 session ?
                     <div className='z-30 absolute top-5 right-10 font-semibold text-cyan-800 text-xl'>
-                        Hello {session.user?.name}
+                        Hello {session.user?.role}
                     </div>
                 : null
             }
