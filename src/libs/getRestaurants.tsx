@@ -1,4 +1,4 @@
-export default async function getCars() {
+export default async function getRestaurants() {
 
     // add timeout for loading delay testing
     // await new Promise((resolve) => setTimeout(resolve, 1000));

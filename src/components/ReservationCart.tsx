@@ -1,12 +1,12 @@
 "use client"
-import { AppDishpatch, useAppSelector } from "@/redux/store"
+import { AppDispatch, useAppSelector } from "@/redux/store"
 import { useDispatch } from "react-redux"
 import { removeReservation } from "@/redux/features/cartSlice"
 
 export default function ReservationCart() {
 
     const carItems = useAppSelector((state) => state.cartSlice.carItems)
-    const dispatch = useDispatch<AppDishpatch>()
+    const dispatch = useDispatch<AppDispatch>()
 
     return (
         <>

@@ -42,8 +42,9 @@ export default function SignUp() {
     };
 
     return (
-        <div style={{ width: '300px', margin: 'auto', padding: '20px', border: '1px solid #ccc', borderRadius: '5px' }}>
+        <div style={{ width: '300px', margin: 'auto', padding: '20px', border: '1px solid #ccc', borderRadius: '5px', marginTop: '35px'}}>
             <h1>Sign Up</h1>
+            <br />
             <form onSubmit={handleSubmit}>
                 <div style={{ marginBottom: '10px' }}>
                     <input

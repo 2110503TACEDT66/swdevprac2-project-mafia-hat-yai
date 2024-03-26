@@ -1,5 +1,5 @@
 import Image from "next/image"
-import getCar from "@/libs/getCar"
+import getCar from "@/libs/getRestaurant"
 import Link from "next/link"
 
 export default async function CarDetailPage({ params }: { params: { cid: string } }) {
@@ -21,7 +21,7 @@ export default async function CarDetailPage({ params }: { params: { cid: string 
                     <div>Stars: {carDetail.data.averageStar}</div>
                     <div>User reviews : {carDetail.data.numberOfReviews} reviews</div>
                     <br />
-                    <Link href={`/reservations?id=${params.cid}&model=${carDetail.data.model}`}>
+                    <Link href={`/reservation`}>
                         <button className="block rounded-md bg-sky-600 hover:bg-indigo-600 px-3 py-1 text-white shadow-sm">
                             Make Reservation
                         </button>
