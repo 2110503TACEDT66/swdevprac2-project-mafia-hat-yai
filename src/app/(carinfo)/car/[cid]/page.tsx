@@ -20,6 +20,7 @@ export default async function CarDetailPage({ params }: { params: { cid: string 
                     <div>Closed Time : {carDetail.data.close}</div>
                     <div>Stars: {carDetail.data.averageStar}</div>
                     <div>User reviews : {carDetail.data.numberOfReviews} reviews</div>
+                    <br />
                     <Link href={`/reservations?id=${params.cid}&model=${carDetail.data.model}`}>
                         <button className="block rounded-md bg-sky-600 hover:bg-indigo-600 px-3 py-1 text-white shadow-sm">
                             Make Reservation

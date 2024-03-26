@@ -8,7 +8,7 @@ export default async function getCars() {
     
     if (!response.ok) {
         console.log("No no ok");
-        console.log(response);
+        // console.log(response);
         throw new Error("Failed to fetch cars")
     } 
 

@@ -15,10 +15,10 @@ export default async function Car() {
         <main className="text-center p-5" >
             <h1 className='text-xl font-medium'>Select Your Travel Partner</h1>
             <Suspense fallback={<p>Loading...<LinearProgress/></p>}>
-            <CarCatalog restaurantJson={cars}/>
+                <CarCatalog restaurantJson={cars}/>
             </Suspense>
             <hr className="my-10" />
-            <h1 className="text-xl font-medium">TRY Client-Side Car Panel</h1>
+            <h1 className="text-xl font-medium">Restaurant - Panel</h1>
         </main>
     )
 }
