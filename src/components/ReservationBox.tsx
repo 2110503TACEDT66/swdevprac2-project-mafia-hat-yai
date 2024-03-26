@@ -87,7 +87,7 @@ export default function ReservationBox({ userInfo }: { userInfo: any }) {
           <div>
             <button
               type='button'
-              className="w-full bg-green-600 text-white font-semibold py-2 px-4 rounded focus:outline-none focus:ring focus:ring-indigo-400 hover:bg-sky-600"
+              className="w-full bg-green-600 text-white font-semibold py-2 px-4 rounded focus:outline-none focus:ring focus:ring-green-400 hover:bg-green-600"
               onClick={makeReservation} name='Reserve'>
               Reserve a seat.
             </button>
