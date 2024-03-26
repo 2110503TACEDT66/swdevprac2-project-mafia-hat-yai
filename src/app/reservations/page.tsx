@@ -5,7 +5,7 @@ import { useSearchParams } from "next/navigation";
 import { useState } from "react";
 import dayjs, { Dayjs } from "dayjs";
 import { useDispatch } from "react-redux";
-import { AppDishpatch } from "@/redux/store";
+import { AppDispatch } from "@/redux/store";
 import { addReservation } from "@/redux/features/cartSlice";
 import { ReservationItem } from "../../../interfaces";
 
@@ -14,7 +14,7 @@ export default function Reservations() {
     const urlParams = useSearchParams()
     const cid = urlParams.get('id')
     const model = urlParams.get('model')
-    const dispatch = useDispatch<AppDishpatch>()
+    const dispatch = useDispatch<AppDispatch>()
 
     const makeReservation = () => {
         if (cid && model && pickupDate && returnDate) {

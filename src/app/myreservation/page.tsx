@@ -14,8 +14,6 @@ export default async function myreservation() {
         userInfo = await getUserProfile(session.user.token);
     }
 
-
-
     return (
         <main>
             <ReservationList userInfo={userInfo}></ReservationList>

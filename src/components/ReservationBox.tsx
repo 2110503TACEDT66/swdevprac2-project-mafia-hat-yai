@@ -1,28 +1,26 @@
 "use client"
-import DateReserve from '@/components/DateReserve';
-import { useEffect, useState } from 'react';
 import Select from '@mui/material/Select';
 import MenuItem from '@mui/material/MenuItem';
+import DateReserve from '@/components/DateReserve';
 import getRestaurants from '@/libs/getRestaurants';
 import addReservation from '@/libs/addReservation';
-import { getSession, useSession } from 'next-auth/react';
 import ReservationReserve from './ReservationReserve';
+import { useEffect, useState } from 'react';
+import { getSession, useSession } from 'next-auth/react';
 
-export default function ReservationBox({profile}:{profile:any}) {
+export default function ReservationBox({ userInfo }: { userInfo: any }) {
 
   const [rp, setRp] = useState<any>(null);
   useEffect(() => {
-    const getrest = async () => {const Restaurants = await getRestaurants();setRp(Restaurants);};getrest();},[]);
-
+    const getrest = async () => { const Restaurants = await getRestaurants(); setRp(Restaurants); }; getrest();
+  }, []);
   const [dateReserve, setDateReserve] = useState(null);
   const [restaurant, setRestaurant] = useState('');
-  const {data:session, status} = useSession()
-
+  const { data: session, status } = useSession()
   const makeReservation = async () => {
-    
-    if (dateReserve && restaurant && profile) {
+    if (dateReserve && restaurant && userInfo) {
       try {
-        if(session) {
+        if (session) {
           // alert(restaurant) // restID
           // alert(session.user.token) // user token
           // alert(dateReserve) // date
@@ -35,13 +33,13 @@ export default function ReservationBox({profile}:{profile:any}) {
             },
             body: JSON.stringify({
               reserveDate: dateReserve,
-              user: profile.data._id
+              user: userInfo.data._id
             })
           });
           if (response.ok) {
             // alert("OK")
           }
-        } 
+        }
         // console.log("Booking dispatched successfully.");
       } catch (error) {
         console.log("ERROR");
@@ -68,10 +66,11 @@ export default function ReservationBox({profile}:{profile:any}) {
                 id="restaurant"
                 className="h-[full] w-[320px]"
                 value={restaurant}
-                onChange={(e)=>{setRestaurant(e.target.value);
+                onChange={(e) => {
+                  setRestaurant(e.target.value);
                 }}>
-                {rp?.data.map((RestaurantItem:any)=>(
-                <MenuItem value={RestaurantItem._id}>{RestaurantItem.name}</MenuItem>
+                {rp?.data.map((RestaurantItem: any) => (
+                  <MenuItem value={RestaurantItem._id}>{RestaurantItem.name}</MenuItem>
                 ))}
               </Select>
             </div>
@@ -88,9 +87,9 @@ export default function ReservationBox({profile}:{profile:any}) {
           <div>
             <button
               type='button'
-              className="w-full bg-sky-600 hover:bg-indigo-600 text-white font-semibold py-2 px-4 rounded focus:outline-none focus:ring focus:ring-indigo-400"
+              className="w-full bg-green-600 text-white font-semibold py-2 px-4 rounded focus:outline-none focus:ring focus:ring-indigo-400 hover:bg-sky-600"
               onClick={makeReservation} name='Reserve'>
-              Reserve My Seat now!!!
+              Reserve a seat.
             </button>
           </div>
         </form>

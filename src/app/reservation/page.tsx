@@ -9,18 +9,12 @@ import ReservationBox from '@/components/ReservationBox';
 
 export default async function reservation() {
     const session = await getServerSession(authOptions);
-    let profile = null;
-    if (session) {
-        profile = await getUserProfile(session.user.token);
-    } else {
-        return  <p className='text-black text-xl text-center'>Please go back and login ... <LinearProgress /></p>;
-    }
+    let userInfo = null;
+    if (session) userInfo = await getUserProfile(session.user.token);
 
     return (
         <main>
-            <Suspense fallback={<p className='text-black text-xl text-center'>Loading ... <LinearProgress /></p>}>
-                <ReservationBox profile={profile}></ReservationBox>
-            </Suspense>
+            <Suspense fallback={<p className='text-black text-xl text-center'>Loading ... <LinearProgress /></p>}><ReservationBox userInfo={userInfo}></ReservationBox></Suspense>
         </main>
     );
 }
