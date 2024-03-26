@@ -15,7 +15,7 @@ export default function ProductCard({ carName, imgSrc, onCompare, averageStar }:
     
     return (
         <InteractiveCard contentName={carName}>
-            <div className="w-full h-[70%] relative rounded-t-lg">
+            <div className="w-full h-[65%] relative rounded-t-lg">
                 <Image src={imgSrc}
                     alt='Product Picture'
                     fill={true}

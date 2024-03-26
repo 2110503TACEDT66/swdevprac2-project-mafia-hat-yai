@@ -8,7 +8,7 @@ export default async function CarCatalog({ restaurantJson }: { restaurantJson: R
     
     return (
         <>
-            Explore {restaurantJsonReady.count} models in our catalog
+            Explore {restaurantJsonReady.count} restaurant in our website
             <div style={{ margin: "20px", display: "flex", flexDirection: "row", alignContent: "space-around", justifyContent: "space-around", flexWrap: "wrap", padding: "10px" }}>
                 {
                     restaurantJsonReady.data.map((restaurantItem: RestaurantItem) => (
