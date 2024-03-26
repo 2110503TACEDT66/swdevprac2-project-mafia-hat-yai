@@ -1,36 +1,47 @@
 import Image from "next/image";
-import InteractiveCard from "./InteractiveCard";
 
 export default function Add2() {
     return (
-        <div className="flex flex-row mt-5">
-        <InteractiveCard contentName='hello'>
-                <div className="w-full h-[70%] relative rounded-t-lg">
-                    <Image src="/img/res01.jpg"
+        <div className="flex flex-row w-full justify-center">
+            <div className="m-5 flex-grow-0 flex-shrink-0 w-1/4">
+                <div className="aspect-w-4 aspect-h-3">
+                    <Image 
+                        src="/img/res01.jpg"
                         alt='Product Picture'
-                        layout="fill"
-                        className='object-cover rounded-t-lg'
+                        width={300}
+                        height={200}
+                        layout="responsive"
+                        className="rounded-lg bg-black"
+                        objectFit="cover"
                     />
                 </div>
-        </InteractiveCard>
-        <InteractiveCard contentName='hello'>
-                <div className="w-full h-[70%] relative rounded-t-lg">
-                    <Image src="/img/res02.jpg"
+            </div>
+            <div className="m-5 flex-grow-0 flex-shrink-0 w-1/4">
+                <div className="aspect-w-4 aspect-h-3">
+                    <Image 
+                        src="/img/res02.jpg"
                         alt='Product Picture'
-                        layout="fill"
-                        className='object-cover rounded-t-lg'
+                        width={300}
+                        height={200}
+                        layout="responsive"
+                        className="rounded-lg bg-black"
+                        objectFit="cover"
                     />
                 </div>
-        </InteractiveCard>
-        <InteractiveCard contentName='hello'>
-                <div className="w-full h-[70%] relative rounded-t-lg">
-                    <Image src="/img/res03.jpg"
+            </div>
+            <div className="m-5 flex-grow-0 flex-shrink-0 w-1/4">
+                <div className="aspect-w-4 aspect-h-3">
+                    <Image 
+                        src="/img/res03.jpg"
                         alt='Product Picture'
-                        layout="fill"
-                        className='object-cover rounded-t-lg'
+                        width={300}
+                        height={200}
+                        layout="responsive"
+                        className="rounded-lg bg-black"
+                        objectFit="cover"
                     />
                 </div>
-        </InteractiveCard>
+            </div>
         </div>
     );
 }
