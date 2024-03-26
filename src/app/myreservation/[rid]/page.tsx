@@ -62,7 +62,7 @@ export default function ReservationDetail({ initialDate }: { initialDate: string
             <div className="flex justify-center">
                 <button
                     className="block rounded-md bg-red-600 hover:bg-orange-500 px-3 py-1 text-white shadow-sm mx-2"
-                    onClick={handleDeleteReservaiton}
+                    onClick={handleDeleteReservation}
                 >
                     !! Delete Reservation !!
                 </button>
