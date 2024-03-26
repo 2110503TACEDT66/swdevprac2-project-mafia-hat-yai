@@ -12,7 +12,7 @@ export default async function Add() {
                     className="rounded-lg w-[30%] bg-black" />
                 <div className="text-md mx-5 text-left">
                     <div className="text-4xl font-bold m-5">Reservation Restaurant Platform</div>
-                    <p className="m-5">Work along like-minded professionals in our vibrant coworking spaces in Bangkok, with break out areas and networking events to foster collaboration and growth. Drop in and hot-desk in an open-plan workspace, or reserve your own dedicated desk in a shared office.</p>
+                    <p className="m-5">A reservation restaurant platform provides users with a convenient way to book tables at their desired restaurants, streamlining the dining experience for both customers and restaurant staff. Through this platform, users can browse through a variety of restaurants, view their availability, and make reservations based on their preferences such as date, time, and party size. The platform typically offers features like real-time updates on table availability, special offers or promotions, and user reviews to help customers make informed decisions. For restaurant owners, the platform facilitates efficient table management, reduces no-shows through confirmation mechanisms, and allows them to showcase their offerings to a wider audience. Overall, a reservation restaurant platform enhances the dining experience by offering convenience, accessibility, and transparency for both customers and restaurant owners alike.</p>
                     
                 </div>
             </div>
