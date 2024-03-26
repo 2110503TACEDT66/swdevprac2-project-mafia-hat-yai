@@ -24,17 +24,18 @@ export default function Banner() {
                 objectFit='cover'
             />
             <div className={styles.bannerText}>
-                <h1 className='text-4xl font-medium'>Elevate Your Dining Experience with Easy Reservations</h1>
-                <h3 className='text-xl font-serif'>Secure your seat, savor the flavor journey ahead.</h3>
+                <h1 className='text-6xl font-medium text-white font-bold'>WELCOME TO RESTAURANT</h1>
+                <h1 className='text-4xl font-medium text-white font-bold'>Elevate Your Dining Experience with Easy Reservations</h1>
+                <h3 className='text-xl font-serif text-white font-bold'>Secure your seat, savor the flavor journey ahead.</h3>
             </div>
             {
                 session ?
                     <div className='z-30 absolute top-5 right-10 font-semibold text-cyan-800 text-xl'>
-                        Hello {session.user?.role}
+                        Hello {session.user?.name}
                     </div>
                 : null
             }
-            <button className="bg-white text-blue-600 border border-cyan-600 font-semibold py-2 px-5 m-2 rounded z-30 absolute bottom-0 right-0 hover:bg-cyan-600 hover:text-white hover:border-transparent"
+            <button className="bg-white text-orange-900 border text-orange-900 font-semibold py-2 px-5 m-2 rounded z-30 absolute bottom-0 right-0 hover:bg-orange-900 hover:text-white hover:border-transparent"
                 onClick={(e) => { e.stopPropagation(); router.push('/restaurant') }}>
                 Discover restaurant – Your Table Awaits!
             </button>
