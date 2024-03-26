@@ -42,52 +42,52 @@ export default function SignUp() {
     };
 
     return (
-        <div style={{ width: '300px', margin: 'auto', padding: '20px', border: '1px solid #ccc', borderRadius: '5px', marginTop: '35px'}}>
-            <h1>Sign Up</h1>
-            <br />
-            <form onSubmit={handleSubmit}>
-                <div style={{ marginBottom: '10px' }}>
-                    <input
-                        type="text"
-                        value={name}
-                        onChange={(e) => setName(e.target.value)}
-                        placeholder="Name"
-                        required
-                        style={{ width: '100%', padding: '8px', marginBottom: '5px' }}
-                    />
-                </div>
-                <div style={{ marginBottom: '10px' }}>
-                    <input
-                        type="email"
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
-                        placeholder="Email"
-                        required
-                        style={{ width: '100%', padding: '8px', marginBottom: '5px' }}
-                    />
-                </div>
-                <div style={{ marginBottom: '10px' }}>
-                    <input
-                        type="telephone"
-                        value={telephone}
-                        onChange={(e) => setTelephone(e.target.value)}
-                        placeholder="Telephone"
-                        required
-                        style={{ width: '100%', padding: '8px', marginBottom: '5px' }}
-                    />
-                </div>
-                <div style={{ marginBottom: '10px' }}>
-                    <input
-                        type="password"
-                        value={password}
-                        onChange={(e) => setPassword(e.target.value)}
-                        placeholder="Password"
-                        required
-                        style={{ width: '100%', padding: '8px', marginBottom: '5px' }}
-                    />
-                </div>
-                <button type="submit" style={{ width: '100%', padding: '10px', backgroundColor: '#007bff', color: '#fff', border: 'none', borderRadius: '5px', cursor: 'pointer' }}>Sign Up</button>
-            </form>
+        <div className="max-w-xs mx-auto p-4 border border-gray-300 rounded-lg mt-8">
+    <h1 className="mb-4 text-center font-bold">Sign Up Now!</h1>
+    <form onSubmit={handleSubmit} className="space-y-4">
+        <div className="border border-gray-300 rounded-md p-2">
+            <input
+                type="text"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                placeholder="Name"
+                required
+                className="w-full px-2 py-1"
+            />
         </div>
+        <div className="border border-gray-300 rounded-md p-2">
+            <input
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="Email"
+                required
+                className="w-full px-2 py-1"
+            />
+        </div>
+        <div className="border border-gray-300 rounded-md p-2">
+            <input
+                type="telephone"
+                value={telephone}
+                onChange={(e) => setTelephone(e.target.value)}
+                placeholder="Telephone"
+                required
+                className="w-full px-2 py-1"
+            />
+        </div>
+        <div className="border border-gray-300 rounded-md p-2">
+            <input
+                type="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                placeholder="Password"
+                required
+                className="w-full px-2 py-1"
+            />
+        </div>
+        <button type="submit" className="block w-full rounded-md bg-gray-600 hover:bg-gray-500 px-3 py-2 text-white shadow-sm">Sign Up</button>
+    </form>
+    </div>
+
     );
 }
