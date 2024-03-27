@@ -1,6 +1,6 @@
 export default async function updateReservation(id:string, reserveDate: string) {
 
-    const response = await fetch(`http://localhost:5000/api/v1/reservations/${id}`, {
+    const response = await fetch(`https://presentation-day-1-mafia-hat-yai.vercel.app/api/v1/reservations/${id}`, {
         method: "PUT",
         headers: {
             "Content-Type": "application/json" 
