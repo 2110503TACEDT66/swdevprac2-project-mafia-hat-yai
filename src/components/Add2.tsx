@@ -15,6 +15,7 @@ export default function Add2() {
                         objectFit="cover"
                     />
                 </div>
+                <br />
             </div>
             <div className="m-5 flex-grow-0 flex-shrink-0 w-1/4">
                 <div className="aspect-w-4 aspect-h-3">
