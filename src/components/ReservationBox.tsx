@@ -17,19 +17,22 @@ export default function ReservationBox({ userInfo }: { userInfo: any }) {
     };
     getrest();
   }, []);
-  const [dateReserve, setDateReserve] = useState(null);
+  const [dateReserve, setDateReserve] = useState();
   const [restaurant, setRestaurant] = useState("");
   const { data: session, status } = useSession();
   const makeReservation = async () => {
     if (dateReserve && restaurant && userInfo) {
       try {
         if (session) {
+          const formattedDateReserve = dateReserve
+            // .format()
           // alert(restaurant) // restID
           // alert(session.user.token) // user token
           // alert(dateReserve) // date
-          // alert(profile.data._id) // user id
+          // alert(userInfo?.data._id) // user id
+          // alert(formattedDateReserve)
           const response = await fetch(
-            `http://localhost:5000/api/v1/restaurants/${restaurant}/reservations`,
+            `https://presentation-day-1-mafia-hat-yai.vercel.app/api/v1/restaurants/${restaurant}/reservations`,
             {
               method: "POST",
               headers: {
@@ -37,13 +40,16 @@ export default function ReservationBox({ userInfo }: { userInfo: any }) {
                 "Content-Type": "application/json",
               },
               body: JSON.stringify({
-                reserveDate: dateReserve,
+                reserveDate: formattedDateReserve,
                 user: userInfo.data._id,
               }),
             }
           );
           if (response.ok) {
             // alert("OK")
+            window.location.href = '/myreservation';
+          } else {
+            alert("Failed")
           }
         }
         // console.log("Booking dispatched successfully.");

@@ -45,7 +45,7 @@ export default function ReservationDetail({ params }: { params: reservationPr })
 
     const handleDeleteReservation = () => {
         try {
-            alert(params.rid)
+            // alert(params.rid)
             const response = deleteReservation(params.rid);
 
             // if (response.ok) {
@@ -61,12 +61,12 @@ export default function ReservationDetail({ params }: { params: reservationPr })
     return (
         <main className="text-center p-5">
             <div>
-                <div>
+                {/* <div>
                     <ReservationReserve
                     onDateChange={(value: any) => {
                         setDateReserve(value);
                     }}/>
-                </div>
+                </div> */}
                 <input
                     type="text"
                     placeholder="New Reservation Date"
