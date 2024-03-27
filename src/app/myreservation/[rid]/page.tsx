@@ -11,8 +11,9 @@ import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { DateTimePicker } from '@mui/x-date-pickers';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import ReservationReserve from '@/components/ReservationReserve';
+import { reservationPr } from '../../../../interfaces';
 
-export default function ReservationDetail({ params }: { params: Object }) {
+export default function ReservationDetail({ params }: { params: reservationPr }) {
     // Define state to manage the new reservation date
     const [newDate, setNewDate] = useState('');
     const [dateReserve, setDateReserve] = useState<Dayjs | null>(null)

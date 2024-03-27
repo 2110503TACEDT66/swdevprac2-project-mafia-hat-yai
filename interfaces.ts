@@ -35,6 +35,9 @@ export interface RestaurantJson {
     data: RestaurantItem[]
 }
 
+export interface reservationPr {
+    rid: string
+}
 export interface RestaurantInfo {
     id: string,
     name: string,
