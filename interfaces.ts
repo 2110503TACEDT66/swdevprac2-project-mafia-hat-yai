@@ -35,9 +35,15 @@ export interface RestaurantJson {
     data: RestaurantItem[]
 }
 
+export interface RestaurantInfo {
+    id: string,
+    name: string,
+    _id: string,
+}
+
 export interface Reservation {
     _id: string,
-    restaurant: string,
+    restaurant: RestaurantInfo,
     reserveDate: string,
     user: string,
 }

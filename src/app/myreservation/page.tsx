@@ -17,11 +17,19 @@ export default async function MyReservationPage() {
 
     const reservations = getReservations(session.user.token)
 
+    const capitalizeFirstLetter = (str: string) => {
+        return str.charAt(0).toUpperCase() + str.slice(1);
+    }
 
     return (
         <main>
-            <div className="text-3xl font-bold text-center my-4">{profile.data.name} reservation {profile.data.phone}</div>
-            <ReservationList reservationJson={reservations} />
+            <div className="text-3xl font-bold text-center my-4">{capitalizeFirstLetter(profile.data.name)}'s reservation</div>
+            <div>
+                {
+                    profile.data.role === "admin" ? <div className="text-large font-bold text-center">Admin Page</div> : null
+                }
+            </div>
+            <ReservationList reservationJson={reservations} userId={profile.data._id} userRole={profile.data.role} />
         </main>
     );
 }

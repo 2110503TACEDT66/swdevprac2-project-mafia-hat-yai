@@ -1,22 +1,25 @@
-"use client"
-import Select from '@mui/material/Select';
-import MenuItem from '@mui/material/MenuItem';
-import DateReserve from '@/components/DateReserve';
-import getRestaurants from '@/libs/getRestaurants';
-import addReservation from '@/libs/addReservation';
-import ReservationReserve from './ReservationReserve';
-import { useEffect, useState } from 'react';
-import { getSession, useSession } from 'next-auth/react';
+"use client";
+import Select from "@mui/material/Select";
+import MenuItem from "@mui/material/MenuItem";
+import DateReserve from "@/components/DateReserve";
+import getRestaurants from "@/libs/getRestaurants";
+import addReservation from "@/libs/addReservation";
+import ReservationReserve from "./ReservationReserve";
+import { useEffect, useState } from "react";
+import { getSession, useSession } from "next-auth/react";
 
 export default function ReservationBox({ userInfo }: { userInfo: any }) {
-
   const [rp, setRp] = useState<any>(null);
   useEffect(() => {
-    const getrest = async () => { const Restaurants = await getRestaurants(); setRp(Restaurants); }; getrest();
+    const getrest = async () => {
+      const Restaurants = await getRestaurants();
+      setRp(Restaurants);
+    };
+    getrest();
   }, []);
   const [dateReserve, setDateReserve] = useState(null);
-  const [restaurant, setRestaurant] = useState('');
-  const { data: session, status } = useSession()
+  const [restaurant, setRestaurant] = useState("");
+  const { data: session, status } = useSession();
   const makeReservation = async () => {
     if (dateReserve && restaurant && userInfo) {
       try {
@@ -25,17 +28,20 @@ export default function ReservationBox({ userInfo }: { userInfo: any }) {
           // alert(session.user.token) // user token
           // alert(dateReserve) // date
           // alert(profile.data._id) // user id
-          const response = await fetch(`http://localhost:5000/api/v1/restaurants/${restaurant}/reservations`, {
-            method: "POST",
-            headers: {
-              "Authorization": `Bearer ${session.user.token}`,
-              "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-              reserveDate: dateReserve,
-              user: userInfo.data._id
-            })
-          });
+          const response = await fetch(
+            `http://localhost:5000/api/v1/restaurants/${restaurant}/reservations`,
+            {
+              method: "POST",
+              headers: {
+                Authorization: `Bearer ${session.user.token}`,
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify({
+                reserveDate: dateReserve,
+                user: userInfo.data._id,
+              }),
+            }
+          );
           if (response.ok) {
             // alert("OK")
           }
@@ -68,9 +74,12 @@ export default function ReservationBox({ userInfo }: { userInfo: any }) {
                 value={restaurant}
                 onChange={(e) => {
                   setRestaurant(e.target.value);
-                }}>
+                }}
+              >
                 {rp?.data.map((RestaurantItem: any) => (
-                  <MenuItem value={RestaurantItem._id}>{RestaurantItem.name}</MenuItem>
+                  <MenuItem value={RestaurantItem._id}>
+                    {RestaurantItem.name}
+                  </MenuItem>
                 ))}
               </Select>
             </div>
@@ -81,19 +90,25 @@ export default function ReservationBox({ userInfo }: { userInfo: any }) {
               Reserve your date
             </label>
             <div className="mt-2 ">
-              <ReservationReserve onDateChange={(value: any) => { setDateReserve(value) }} />
+              <ReservationReserve
+                onDateChange={(value: any) => {
+                  setDateReserve(value);
+                }}
+              />
             </div>
           </div>
           <div>
             <button
-              type='button'
+              type="button"
               className="w-full bg-green-600 text-white font-semibold py-2 px-4 rounded focus:outline-none focus:ring focus:ring-green-400 hover:bg-green-400"
-              onClick={makeReservation} name='Reserve'>
+              onClick={makeReservation}
+              name="Reserve"
+            >
               Reserve a seat.
             </button>
           </div>
         </form>
       </div>
     </main>
-  )
+  );
 }

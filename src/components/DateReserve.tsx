@@ -6,7 +6,7 @@ import {AdapterDayjs} from '@mui/x-date-pickers/AdapterDayjs'
 import { Dayjs } from 'dayjs'
 import { useState } from 'react'
 
-export default function Form({onDateChange}:{onDateChange:Function}){
+export default function DateReserve({onDateChange}:{onDateChange:Function}){
 
     const [bookingDate,setBookDate] = useState<Dayjs|null>(null)
 

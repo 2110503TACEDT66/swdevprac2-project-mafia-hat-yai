@@ -17,19 +17,8 @@ export default async function createdReservation(id: string, token: string, appt
     });
 
     if (!response.ok) {
-        const errorMessage = await response.text();
-        try {
-            const errorJson = JSON.parse(errorMessage);
-            if (errorJson.message) {
-                alert(errorJson.message);
-                throw new Error(errorJson.message);
-            } else {
-                throw new Error("Unknown error occurred");
-            }
-        } catch (error) {
-            console.error("Error parsing error message:", error);
-            throw new Error("Cannot create reservation");
-        }
+        throw new Error("Cannot add reservation");
     }
+
     return await response.json();
 }
