@@ -48,9 +48,9 @@ export default function ReservationDetail({ params }: { params: reservationPr })
             alert(params.rid)
             const response = deleteReservation(params.rid);
 
-            if (response.ok) {
-                alert("DELETE OK")
-            }
+            // if (response.ok) {
+            //     alert("DELETE OK")
+            // }
         } catch (error) {
             console.error('Error updating reservation:', error);
             // You can add further error handling logic here, such as showing an error message to the user
